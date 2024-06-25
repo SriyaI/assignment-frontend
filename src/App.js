@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import GetDetails from './GetDetails';
+import { API_URL } from './global/constants';
 
 function Home() {
   const [file, setFile] = useState(null);
@@ -15,7 +16,7 @@ function Home() {
     formData.append('file', file);
 
     try {
-      const response = await fetch('http://localhost:5000/upload', {
+      const response = await fetch(`${API_URL}/upload`, {
         method: 'POST',
         body: formData
       });
