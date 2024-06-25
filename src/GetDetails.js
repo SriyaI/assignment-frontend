@@ -1,22 +1,19 @@
 import React, { useState } from 'react';
 
 function GetDetails() {
-  // State to store the user ID and timestamp entered by the user
+
   const [userId, setUserId] = useState('');
   const [timestamp, setTimestamp] = useState('');
   const [transactions, setTransactions] = useState('');
 
-  // Function to handle input change in the text box for user ID
   const handleInputChange = (event) => {
     setUserId(event.target.value);
   };
 
-  // Function to handle input change in the text box for timestamp
   const handleTimestampChange = (event) => {
     setTimestamp(event.target.value);
   };
 
-  // Function to validate the timestamp
   const isValidDate = (dateString) => {
     const regex = /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/;
     if (!regex.test(dateString)) {
@@ -26,26 +23,24 @@ function GetDetails() {
     return !isNaN(date.getTime());
   };
 
-  // Function to handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Validate the timestamp
     if (!isValidDate(timestamp)) {
       alert('Please enter a valid date and time in the format YYYY-MM-DD HH:MM:SS.');
       return;
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/users/${userId}`, {
-        method: 'POST', // You can use GET or POST as per your backend API
+      const response = await fetch(`https://assignment-backend-d5cq.onrender.com/users/${userId}`, {
+        method: 'POST', 
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ userId, timestamp }),
       });
 
-      // Handle response from the backend as needed
+      
       const data = await response.json();
       console.log('Response from backend:', data);
       setTransactions(JSON.stringify(data.netAmounts))
@@ -59,7 +54,6 @@ function GetDetails() {
       <h1>Another Component</h1>
       <p>This is another component rendered on a different path.</p>
 
-      {/* Form for entering user ID and timestamp, and submitting */}
       <form onSubmit={handleSubmit}>
         <label>
           User ID:
