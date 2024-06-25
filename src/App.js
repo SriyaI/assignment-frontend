@@ -44,7 +44,7 @@ function Home() {
       </form>
       <br></br>
       <br></br>
-      <h2>Task2 - Upload File</h2>
+      <h2>Task2 - Enter User Details</h2>
       <Link to="/details">
         <button>Enter user ID details</button>
       </Link>
