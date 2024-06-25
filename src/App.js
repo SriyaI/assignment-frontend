@@ -39,7 +39,7 @@ function Home() {
         <button type="submit">Upload</button>
       </form>
       <Link to="/details">
-        <button>Go to Another Component</button>
+        <button>Enter user ID details</button>
       </Link>
     </div>
   );

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { API_URL } from './global/constants';
+
 function GetDetails() {
 
   const [userId, setUserId] = useState('');
@@ -32,7 +34,7 @@ function GetDetails() {
     }
 
     try {
-      const response = await fetch(`https://assignment-backend-d5cq.onrender.com/users/${userId}`, {
+      const response = await fetch(`${API_URL}/users/${userId}`, {
         method: 'POST', 
         headers: {
           'Content-Type': 'application/json',
@@ -51,8 +53,8 @@ function GetDetails() {
 
   return (
     <div>
-      <h1>Another Component</h1>
-      <p>This is another component rendered on a different path.</p>
+      <h1>Get Details</h1>
+      <p>This is a page to enter your user id and get the details of transactions.</p>
 
       <form onSubmit={handleSubmit}>
         <label>
