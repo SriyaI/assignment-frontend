@@ -34,11 +34,17 @@ function Home() {
 
   return (
     <div className="Home">
-      <h1>Upload CSV</h1>
+      <h1>KoinX Assignment</h1>
+      <br></br>
+      <br></br>
+      <h2>Task1 - Upload File</h2>
       <form onSubmit={handleSubmit}>
         <input type="file" accept=".csv" onChange={handleFileChange} />
         <button type="submit">Upload</button>
       </form>
+      <br></br>
+      <br></br>
+      <h2>Task2 - Upload File</h2>
       <Link to="/details">
         <button>Enter user ID details</button>
       </Link>

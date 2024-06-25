@@ -56,6 +56,8 @@ function GetDetails() {
       <h1>Get Details</h1>
       <p>This is a page to enter your user id and get the details of transactions.</p>
 
+      <br />
+
       <form onSubmit={handleSubmit}>
         <label>
           User ID:
@@ -67,6 +69,7 @@ function GetDetails() {
           />
         </label>
         <br />
+        <br />
         <label>
           Timestamp:
           <input
@@ -77,6 +80,7 @@ function GetDetails() {
             required
           />
         </label>
+        <br />
         <br />
         <button type="submit">Submit</button>
         {transactions && <>{transactions}</>}
