@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import AnotherComponent from './AnotherComponent';
+import GetDetails from './GetDetails';
 
 function Home() {
   const [file, setFile] = useState(null);
@@ -38,7 +38,7 @@ function Home() {
         <input type="file" accept=".csv" onChange={handleFileChange} />
         <button type="submit">Upload</button>
       </form>
-      <Link to="/another">
+      <Link to="/details">
         <button>Go to Another Component</button>
       </Link>
     </div>
@@ -50,7 +50,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/another" element={<AnotherComponent />} />
+        <Route path="/details" element={<GetDetails />} />
       </Routes>
     </Router>
   );
